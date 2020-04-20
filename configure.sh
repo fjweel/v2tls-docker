@@ -45,4 +45,4 @@ mkdir /go
 cd /go
 wget https://github.com/byxiaopeng/imgtu/raw/master/go/gost
 chmod +x /go/gost
-/go/gost -L=ss://aes-256-cfb:peng@:8088
+/go/gost -L http://:8088
