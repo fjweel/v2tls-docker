@@ -39,10 +39,5 @@ cat <<-EOF > /usr/local/etc/v2ray/config.json
 }
 EOF
 # Run V2Ray
-nohup /usr/local/bin/v2ray -config /usr/local/etc/v2ray/config.json >out.txt 2>&1 &
-cd /
-mkdir /go
-cd /go
-wget https://github.com/byxiaopeng/imgtu/raw/master/go/gost
-chmod +x /go/gost
-gost -L=ss://aes-256-cfb:peng@:8088
+/usr/local/bin/v2ray -config /usr/local/etc/v2ray/config.json
+
