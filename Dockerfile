@@ -1,5 +1,12 @@
 FROM alpine:latest
 RUN apk add --no-cache --virtual .build-deps ca-certificates curl
+
+#同步系统时间
+RUN apk add tzdata
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+RUN echo "Asia/Shanghai" > /etc/timezone
+RUN apk del tzdata
+
 RUN mkdir /tmp/v2ray
 RUN curl -L -H "Cache-Control: no-cache" -o /tmp/v2ray/v2ray.zip https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip
 RUN unzip /tmp/v2ray/v2ray.zip -d /tmp/v2ray
