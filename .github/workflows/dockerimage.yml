@@ -12,5 +12,3 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           tag_names: true
-      - name: WeChat notification
-        run: curl https://sc.ftqq.com/${{ secrets.API }}.send?text=推送v2tls-docker成功
