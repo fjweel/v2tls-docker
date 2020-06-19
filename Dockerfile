@@ -19,7 +19,7 @@ RUN rm -rf /tmp/v2ray
 # V2Ray new configuration
 RUN install -d /usr/local/etc/v2ray
 
-
+RUN mkdir /run/nginx
 ADD default.conf /etc/nginx/conf.d/default.conf
 
 ADD index.html /var/lib/nginx/html/index.html
