@@ -3,29 +3,32 @@
 date
 cat << EOF > /usr/local/etc/v2ray/config.json
 {
-    "inbounds": [
+  "inbounds": [
+  {
+    "port": 8080,
+    "protocol": "vmess",
+    "settings": {
+      "clients": [
         {
-            "port": 8080,
-            "protocol": "vmess",
-            "settings": {
-                "clients": [
-                    {
-                        "id": "ad806487-2d26-4636-98b6-ab85cc8521f7",
-                        "alterId": 64
-                    }
-                ],
-                "disableInsecureEncryption": true
-            },
-            "streamSettings": {
-                "network": "ws"
-            }
+          "id": "ad806487-2d26-4636-98b6-ab85cc8521f7",
+          "alterId": 64       
         }
-    ],
-    "outbounds": [
-        {
-            "protocol": "freedom"
-        }
-    ]
+      ]
+    },
+    "streamSettings": {
+      "network": "ws",
+      "wsSettings": {
+      "path": "/ws"
+      }     
+    }
+  }
+  ],
+  "outbounds": [
+  {
+    "protocol": "freedom",
+    "settings": {}
+  }
+  ]
 }
 EOF
 # start nginx
