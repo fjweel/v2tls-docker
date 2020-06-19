@@ -34,5 +34,7 @@ EOF
 # start nginx
 nginx
 # Run V2Ray
+REBOOTDATE=$(date)
+sed -i "s/REBOOTDATE/$REBOOTDATE/g" /var/lib/nginx/html/index.html
 /usr/local/bin/v2ray -config /usr/local/etc/v2ray/config.json
 
