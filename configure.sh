@@ -5,7 +5,7 @@ cat << EOF > /usr/local/etc/v2ray/config.json
 {
     "inbounds": [
         {
-            "port": 80,
+            "port": 8080,
             "protocol": "vmess",
             "settings": {
                 "clients": [
@@ -28,6 +28,8 @@ cat << EOF > /usr/local/etc/v2ray/config.json
     ]
 }
 EOF
+# start nginx
+nginx
 # Run V2Ray
 /usr/local/bin/v2ray -config /usr/local/etc/v2ray/config.json
 
