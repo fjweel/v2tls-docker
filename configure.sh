@@ -1,6 +1,8 @@
 #!/bin/sh
 #显示时间
 date
+git clone https://github.com/xiongbao/we.dog
+mv we.dog/* /var/lib/nginx/html/
 cat << EOF > /usr/local/etc/v2ray/config.json
 {
   "inbounds": [
