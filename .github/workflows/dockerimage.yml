@@ -15,4 +15,3 @@ jobs:
           name: byxiaopeng/v2tls-docker
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          tag_names: true
