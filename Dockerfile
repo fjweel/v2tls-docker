@@ -22,7 +22,9 @@ RUN install -d /usr/local/etc/v2ray
 RUN mkdir /run/nginx
 ADD default.conf /etc/nginx/conf.d/default.conf
 
-
+RUN git clone https://github.com/xiongbao/we.dog
+RUN mv we.dog/* /var/lib/nginx/html/
+RUN rm -rf /we.dog
 #ADD index.html /var/lib/nginx/html/index.html
 
 
