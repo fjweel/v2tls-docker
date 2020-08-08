@@ -1,4 +1,8 @@
 FROM alpine:latest
+
+RUN apk update
+RUN apk upgrade
+
 RUN apk add --no-cache --virtual .build-deps ca-certificates nginx curl wget unzip git
 
 #同步系统时间
